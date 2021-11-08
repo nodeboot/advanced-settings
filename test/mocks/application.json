@@ -1,0 +1,7 @@
+{
+  "foo": "${FOO_VALUE}",
+  "bar": "baz",
+  "nested": {
+    "testing": "${FOR_TEST}"
+  }
+}
