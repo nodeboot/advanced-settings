@@ -1,0 +1,27 @@
+{
+  "name": "advanced-settings",
+  "version": "1.0.0",
+  "description": "Read application settings using advanced strategies like environment variables",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nodeboot/advanced-settings.git"
+  },
+  "keywords": [
+    "env",
+    "environment",
+    "nodeboot"
+  ],
+  "author": "JRichardsz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nodeboot/advanced-settings/issues"
+  },
+  "homepage": "https://github.com/nodeboot/advanced-settings#readme"
+}
