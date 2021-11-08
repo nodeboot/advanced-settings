@@ -57,14 +57,18 @@ describe('Correct parsing from a configuration file', () => {
     const testCorrectSame = 'same';
     const resultEvaluationSame = envSettingHelpers.parseVariableValue(testCorrectSame);
     expect(resultEvaluationSame).toBe(testCorrectSame);
-    const testNull = '${FOR_TEST}';
-    const resultEvaluationNull = envSettingHelpers.parseVariableValue(testNull);
-    expect(resultEvaluationNull).toBe(null);
   })
 
-  it('Parse a whole JSON', () => {
+  it('Parse a whole JSON', async () => {
     const route = path.join(__dirname, './mocks/application.json');
-    const parsedJson = envSettings.loadJsonFile(route, 'utf8');
+    const parsedJson = await envSettings.loadJsonFile(route, 'utf8');
+    expect(parsedJson.foo).toBe('foo');
+    expect(parsedJson.nested.testing).toBe('TESTING');
+  })
+
+  it('Parse a whole JSON Async Mode', () => {
+    const route = path.join(__dirname, './mocks/application.json');
+    const parsedJson = envSettings.loadJsonFileSync(route, 'utf8');
     expect(parsedJson.foo).toBe('foo');
     expect(parsedJson.nested.testing).toBe('TESTING');
   })

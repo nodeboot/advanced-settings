@@ -2,6 +2,7 @@
   "foo": "${FOO_VALUE}",
   "bar": "baz",
   "nested": {
-    "testing": "${FOR_TEST}"
+    "testing": "${FOR_TEST}",
+    "notTesting": "FOR_TEST"
   }
 }

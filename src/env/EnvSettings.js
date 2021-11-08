@@ -1,4 +1,5 @@
 const fs = require('fs');
+const fsp = require('fs/promises');
 const helpers = require('../helpers/helpers.js');
 const envSettingHelpers = helpers();
 
@@ -20,8 +21,15 @@ function EnvSettings() {
       }
   }
  
-  this.loadJsonFile = function(jsonFileLocation, charset) {
+  this.loadJsonFileSync = function(jsonFileLocation, charset) {
     const rawApplicationJson = fs.readFileSync(jsonFileLocation, charset);
+    const jsonObject = JSON.parse(rawApplicationJson);
+    parseObjectProperties(jsonObject);
+    return jsonObject;
+  }
+
+  this.loadJsonFile = async function(jsonFileLocation, charset) {
+    const rawApplicationJson = await fsp.readFile(jsonFileLocation, charset);
     const jsonObject = JSON.parse(rawApplicationJson);
     parseObjectProperties(jsonObject);
     return jsonObject;

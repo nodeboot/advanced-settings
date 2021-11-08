@@ -43,9 +43,6 @@ function envSettingsHelpers() {
   }
 
   helpers.parseVariableValue = (configInitialValue) => {
-    if (helpers.testEnvRegex(configInitialValue)) {
-      return null;
-    }
     if(configInitialValue == "true" || configInitialValue == "false"){
       const isTrueSet = (configInitialValue === "true");
       return isTrueSet;
