@@ -1,2 +1,2 @@
-const EnvSettings = require('src/env/EnvSettings.js');
+const EnvSettings = require('./src/env/EnvSettings.js');
 exports.EnvSettings = EnvSettings;

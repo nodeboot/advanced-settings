@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cross-env FOO_VALUE=foo FOR_TEST=TESTING jest --verbose --silent --collectCoverage"
   },
   "repository": {
     "type": "git",
@@ -23,5 +23,10 @@
   "bugs": {
     "url": "https://github.com/nodeboot/advanced-settings/issues"
   },
-  "homepage": "https://github.com/nodeboot/advanced-settings#readme"
+  "homepage": "https://github.com/nodeboot/advanced-settings#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "jest": "^27.3.1"
+  }
 }
