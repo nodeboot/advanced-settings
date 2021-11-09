@@ -23,7 +23,7 @@ Read application settings using advanced strategies like environment variables i
 - expose required environment variables
 
 ```cmd
-expot FOO_VALUE=imthefoovalue
+export FOO_VALUE=imthefoovalue
 ```
 
 - add this snippet at the beginning of your application
