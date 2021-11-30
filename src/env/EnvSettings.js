@@ -12,9 +12,7 @@ function EnvSettings() {
         } else if (envSettingHelpers.hasOwnProperty(obj, k)) {
           let configInitialValue = "" + obj[k];
           if (envSettingHelpers.testEnvRegex(configInitialValue)) {
-            while (envSettingHelpers.testEnvRegex(configInitialValue)) {
-              configInitialValue = envSettingHelpers.getEnvParsedVariable(configInitialValue);
-            };
+            configInitialValue = envSettingHelpers.getEnvParsedVariable(configInitialValue);
             obj[k] = envSettingHelpers.parseVariableValue(configInitialValue);
           }
         }
