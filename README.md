@@ -13,34 +13,34 @@ Read application settings using advanced strategies like environment variables i
 
 - Create a file called: application.json at the root of workspace
 
-``` json
+```json
 {
   "foo": "${FOO_VALUE}",
-  "bar": "baz",
+  "bar": "baz"
 }
 ```
 
 - expose required environment variables
 
 ```cmd
-expot FOO_VALUE=imthefoovalue
+export FOO_VALUE=imthefoovalue
 ```
 
 - add this snippet at the beginning of your application
 
 ```javascript
-const EnvSettings = require('advanced-settings').EnvSettings;
+const EnvSettings = require("advanced-settings").EnvSettings;
 var envSettings = new EnvSettings();
-var settings = envSettings.loadJsonFileSync("application.json",'utf8');
-console.log(settings.foo)
+var settings = envSettings.loadJsonFileSync("application.json", "utf8");
+console.log(settings.foo);
 ```
 
 - expose the settings variable to your application using your own approach.
 
 - You can also use it as a promise
 
-``` javascript
-await envSettings.loadJsonFile('application.json','utf8');
+```javascript
+await envSettings.loadJsonFile("application.json", "utf8");
 ```
 
 ## Inspiration

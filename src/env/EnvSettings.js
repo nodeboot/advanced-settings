@@ -12,8 +12,13 @@ function EnvSettings() {
         } else if (envSettingHelpers.hasOwnProperty(obj, k)) {
           let configInitialValue = "" + obj[k];
           if (envSettingHelpers.testEnvRegex(configInitialValue)) {
+            let count=0;
             while (envSettingHelpers.testEnvRegex(configInitialValue)) {
+              if(count>10){
+                throw new Error(`Max attempts reached while ${configInitialValue} was being evaluated`);
+              }
               configInitialValue = envSettingHelpers.getEnvParsedVariable(configInitialValue);
+              count++;
             };
             obj[k] = envSettingHelpers.parseVariableValue(configInitialValue);
           }
